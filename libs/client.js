@@ -11,6 +11,9 @@ module.exports = function (credentials) {
 
     return {
         reviews: function (params) {
+
+            params = _.extend(defaults, params);
+
             params = toAPIOptions(params);
 
             console.log('API REQUEST:', params);
@@ -31,6 +34,8 @@ function toAPIOptions(options) {
         if (value) value = fn(value);
         return value;
     }
+
+    if (!options) return;
 
     var out = {
         q: interpret.string(options.query),

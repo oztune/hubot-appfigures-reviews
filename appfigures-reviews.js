@@ -13,14 +13,13 @@ module.exports = function (robot) {
         return;
     }
 
-    var bot = require('bot')({
+    var bot = require('./libs/bot')({
         username: username,
         password: password,
         clientKey: clientKey
     });
 
-    //robot.respond(/(\d+ )?reviews( in (\w+))?( from (.*))?/i, function (msg) {
-    robot.respond(bot.regexp(), function (msg) {
+    robot.hear(bot.regexp(), function (msg) {
         bot.parse(msg.match, function (out) {
             msg.send(out);
         });

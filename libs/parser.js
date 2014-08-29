@@ -1,5 +1,5 @@
 var _ = require('lodash'),
-    regexp = /^(.*?)reviews\s?(.*)/i,
+    regexp = /^fetch (.*?)reviews?\s?(.*)/i,
     tokensRegexp = /(\S+)/g;
 
 var parser = {

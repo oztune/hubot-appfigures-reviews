@@ -22,13 +22,18 @@ module.exports = function (credentials) {
     var client = require('./client')(credentials);
 
     return {
+        regexp: function () {
+            return parser.regexp();
+        },
         parse: function (input, respondFn) {
             var errors = [];
-            var params = parser.parse(input, {unmatchedTokens: errors});
+            var params = parser.parse(input, {unmatchedTokens: errors}) || {};
 
             if (errors.length > 0) {
                 respondFn(['I didn\'t understand these:', errors.join(', '), 'but I\'ll give it a try'].join(' '));
             }
+
+            respondFn('I\'m contacting the appFigures API');
 
             client.reviews(params).then(function (data) {
                 var out = '';

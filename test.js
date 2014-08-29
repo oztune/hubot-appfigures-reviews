@@ -1,7 +1,7 @@
 var bot = require('./libs/bot')({
-    username: username,
-    password: password,
-    clientKey: clientKey
+    username: '',
+    password: '',
+    clientKey: ''
 });
 
 // Useful for testing
