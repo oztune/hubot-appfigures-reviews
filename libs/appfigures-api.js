@@ -10,7 +10,7 @@ access to accounts with registered API keys.
    keep the user's credentials. For those cases the OAuth
    authentication method should we used.
 */
-var afModule = function (username, password, clientKey) {
+var afModule = function (credentials) {
     var q = require('q'),
         request = require('request'),
         hostname = 'https://api.appfigures.com',
@@ -40,12 +40,12 @@ var afModule = function (username, password, clientKey) {
             request({
                 url: hostname + baseUrl + route,
                 qs: extend({}, options.params, {
-                    client_key: clientKey
+                    client_key: credentials.clientKey
                 }),
                 method: 'GET',
                 auth: {
-                    username: username,
-                    password: password
+                    username: credentials.username,
+                    password: credentials.password
                 }
             }, function (error, response, body) {
                 if (error) {
