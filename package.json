@@ -1,0 +1,21 @@
+{
+  "name": "hubot-appfigures-reviews",
+  "version": "1.0.0",
+  "description": "appFigures reviews reader for Hubot",
+  "main": "appfigures-reviews.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "appFigures",
+    "reviews",
+    "hubot"
+  ],
+  "author": "Oz Michaeli",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.8.2",
+    "q": "^1.0.1",
+    "request": "^2.40.0"
+  }
+}
