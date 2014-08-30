@@ -33,7 +33,7 @@ module.exports = function (credentials) {
                 respondFn(['I didn\'t understand these:', errors.join(', '), 'but I\'ll give it a try'].join(' '));
             }
 
-            respondFn('I\'m contacting the appFigures API');
+            respondFn('I\'m contacting the appFigures API...');
 
             client.reviews(params).then(function (data) {
                 var out = '';
@@ -45,25 +45,6 @@ module.exports = function (credentials) {
             }, function (error) {
                 respondFn('There was an error: ' + error);
             });
-
-            // var params = {
-            //     count: 6
-            // },
-            // count = msg.match[1],
-            // langName = msg.match[3],
-            // date = msg.match[5];
-
-            // if (date) {
-            //     var span = timespan(date);
-            //     params.start = span.start().format(dateFormat);
-            //     params.end = span.end().format(dateFormat);
-            // }
-            // if (count) {
-            //     params.count = count;
-            // }
-            // if (langName) {
-            //     params.lang = lang.toCode(langName);
-            // }
         }
     };
 };

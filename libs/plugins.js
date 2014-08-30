@@ -3,7 +3,7 @@
 var _ = require('lodash');
 
 module.exports = function (parser) {
-    ['new', 'newest', 'lastest', 'recent', 'last'].map(function (string) {
+    ['new', 'newest', 'latest', 'recent', 'last'].map(function (string) {
         parser.plugins[string] = {
             sort: 'date'
         };
